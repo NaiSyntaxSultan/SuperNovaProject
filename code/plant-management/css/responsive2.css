@@ -3,63 +3,93 @@
         width: 220px;
         padding: 16px;
     }
-
-    .btn {
-        height: 50px;
-
-        button {
-            height: 45px;
-        }
-    }
-
-    .table-con {
-        margin-left: 230px;
-    }
-    .table-container {
-        width: 50%;
-        height: 500px;
-        margin-right: 30px;
-    }
-
     .slider-container {
         margin-left: 0px;
         width: 220px;
     }
+
+    .btn {
+        padding-left: 0px;
+
+        .pname {
+            margin-left: 270px;
+        }
+        .pseason {
+            margin-left: 150px;
+        }
+        .parea {
+            margin-left: 120px;
+        }
+        .pgrowth {
+            margin-left: 110px;
+        }
+    }
+
+    .container {
+        padding-left: 225px;
+    }
+    .table-con {
+        width: 300px;
+        margin-left: 0px;
+    }
+    
+    .dall {
+        padding-left: 1110px;
+    }
+    .hellotable {
+        .table-container {
+            margin-left: 220px;
+            width: 80%;
+        }
+    }
+
 }
 
 @media screen and (max-width: 1024px) {
     .sidebar {
-        width: 180px;
+        width: 200px;
         padding: 10px;
     }
-
+    .slider-container {
+        width: 200px;
+        top: 570px;
+    }
     .menu a {
         font-size: 14px;
     }
+    .btn {
+        padding-left: 0px;
 
+        .pname {
+            margin-left: 240px;
+        }
+        .pseason {
+            margin-left: 60px;
+        }
+        .parea {
+            margin-left: 65px;
+        }
+        .pgrowth {
+            margin-left: 70px;
+        }
+    }
+
+    .container {
+        padding-left: 210px;
+    }
     .table-con {
-        margin-left: 190px;
-        width: 22%;
-        height: 300px;
-
-        th {
-            font-size: 14px;
-        }
+        width: 300px;
+        margin-left: 0px;
     }
-
-    .table-container {
-        width: 49%;
-        height: 480px;
-        margin-right: 20px;
-
-        th {
-            font-size: 14px;
-        }
+    
+    .dall {
+        padding-left: 850px;
     }
-
-    .slider-container {
-        width: 180px;
-        top: 570px;
+    .hellotable {
+        .table-container {
+            margin-left: 210px;
+            width: 75%;
+        }
     }
 }
 
@@ -88,25 +118,46 @@
             width: 80%;
         }
     }
-    .btn {
-        justify-content: center;
-        margin-top: 8px;
-    }
-    .container {
-        justify-content: center;
-        flex-direction: column;
-    }
-    .table-con {
-        width: 90%;
-        margin-left: 32px;
-    }
-    .table-container {
-        margin-top: 12px;
-        width: 90%;
-        margin-left: 32px;
-    }
     .slider-container {
         display: none;
+    }
+
+    .btn {
+        padding-left: 0px;
+        margin-bottom: 12px;
+        .pname {
+            margin-left: 80px;
+        }
+        .pseason {
+            margin-left: 20px;
+        }
+        .parea {
+            margin-left: 20px;
+        }
+        .pgrowth {
+            margin-left: 20px;
+        }
+    }
+    .container {
+        flex-wrap: wrap;
+        padding-left: 0px;
+    }
+    .table-con {
+        width: 300px;
+        margin-left: 60px;
+        margin-bottom: 12px;
+    }
+    
+    .dall {
+        padding-left: 580px;
+        margin-bottom: 12px;
+    }
+    .hellotable {
+        padding-left: 5px;
+        .table-container {
+            margin-left: 0px;
+            width: 85%;
+        }
     }
 }
 
@@ -135,24 +186,45 @@
             width: 80%;
         }
     }
-    .btn {
-        justify-content: center;
-        margin-top: 8px;
-    }
-    .container {
-        justify-content: center;
-        flex-direction: column;
-    }
-    .table-con {
-        width: 90%;
-        margin-left: 20px;
-    }
-    .table-container {
-        margin-top: 12px;
-        width: 90%;
-        margin-left: 20px;
-    }
     .slider-container {
         display: none;
+    }
+
+    .btn {
+        padding-left: 0px;
+        margin-bottom: 12px;
+        .pname {
+            margin-left: 0px;
+        }
+        .pseason {
+            margin-left: 0px;
+        }
+        .parea {
+            margin-left: 0px;
+        }
+        .pgrowth {
+            margin-left: 0px;
+        }
+    }
+    .container {
+        flex-wrap: wrap;
+        padding-left: 0px;
+    }
+    .table-con {
+        width: 350px;
+        margin-left: 40px;
+        margin-bottom: 12px;
+    }
+    
+    .dall {
+        padding-left: 250px;
+        margin-bottom: 12px;
+    }
+    .hellotable {
+        padding-left: 5px;
+        .table-container {
+            margin-left: 0px;
+            width: 85%;
+        }
     }
 }
