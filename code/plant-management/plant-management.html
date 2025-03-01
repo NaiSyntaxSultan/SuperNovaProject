@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenSync</title>
+
+    <link rel="stylesheet" href="css/style2.css">
+    <link rel="stylesheet" href="css/responsive2.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+    
+    <div class="sidebar" data-aos="fade-right">
+        <div class="logo">
+            <img src="/img/logo.png" alt="Logo">
+            <h1>GreenSync</h1>
+        </div>
+        
+        <div class="menu">
+            <a href="data-dashboard.html"><i class="fas fa-plug"></i> Dashboard</a>
+            <a href="plant-management.html" class="active"><i class="fas fa-file-invoice-dollar"></i> Plant Management</a>
+            <a href="#"><i class="fas fa-cogs"></i> Members</a>
+            <a href="#"><i class="fas fa-folder"></i> Projects</a>
+            <a href="#"><i class="fas fa-credit-card"></i> Plans & Billing</a>
+            <a href="admin.html"><i class="fas fa-user-friends"></i> Users Management</a>
+            <a href="/login+register/login.html"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+        </div>
+    </div>
+
+    <div class="bar">
+        <div class="box" data-aos="fade-down">
+            <h1>Management Module</h1><br>
+            <p>status: <span>Active</span></p>
+        </div>
+    </div>
+
+    <div class="btn">
+        <button class="pname" onclick="openModal(1)" data-aos="flip-left"><i class="fa-solid fa-plus"></i> Add Name</button>
+        <button class="pseason" onclick="openModal(3)" data-aos="flip-left"><i class="fa-solid fa-plus"></i> Add Season</button>
+        <button class="parea" onclick="openModal(5)" data-aos="flip-left"><i class="fa-solid fa-plus"></i> Add Area</button>
+        <button class="pgrowth" onclick="openModal(7)" data-aos="flip-left"><i class="fa-solid fa-globe"></i> Add Growth</button>
+    </div>
+
+    <div class="container">
+        <div class="table-con" data-aos="zoom-in">
+            <table id="plantTable1">
+                <thead>
+                    <tr>
+                        <th>Plant Name</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="table-con" data-aos="zoom-in">
+            <table id="plantTable2">
+                <thead>
+                    <tr>
+                        <th>Plant Season</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="table-con" data-aos="zoom-in">
+            <table id="plantTable3">
+                <thead>
+                    <tr>
+                        <th>Plant Area</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="table-con" data-aos="zoom-in">
+            <table id="plantTable4">
+                <thead>
+                    <tr>
+                        <th>Growth Stage</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <div class="dall">
+        <button class="pall" onclick="openModal(9)" data-aos="flip-left"><i class="fa-solid fa-plus"></i> Add All</button>
+    </div>
+    <div class="hellotable">
+        <div class="table-container" data-aos="zoom-in">
+            <table id="plantTable">
+                <thead>
+                    <tr>
+                        <th>Plant ID</th>
+                        <th>Time Stamp</th>
+                        <th>Plant Name</th>
+                        <th>Plant Season</th>
+                        <th>Plant Area</th>
+                        <th>Crop Density</th>
+                        <th>Growth Stage</th>
+                        <th>Fertilizer Usage</th>
+                        <th>Pest Pressure</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="slider-container" data-aos="fade-right">
+        <div class="slider">
+            <div class="slide"><img src="/img/a.jpg" alt="Image 1"></div>
+            <div class="slide"><img src="/img/b.jpg" alt="Image 2"></div>
+            <div class="slide"><img src="/img/c.jpg" alt="Image 3"></div>
+            <div class="slide"><img src="/img/d.jpg" alt="Image 4"></div>
+            <div class="slide"><img src="/img/e.jpg" alt="Image 5"></div>
+        </div>
+    </div>
+
+    <!-- Modal name-->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <div class="top-modal">
+                <span class="close-btn" onclick="closeModal(1)">&times;</span>
+                <i class="fa-solid fa-circle-plus"></i>
+                <h2>Add Plant</h2>
+            </div>
+            <form id="nameForm">
+                <label>Plant Name:</label>
+                <input type="text" id="pname" placeholder="Enter your plant name">
+                <button id="submit" type="submit" class="submit-btn">Submit</button>
+            </form>
+        </div>
+    </div>
+    <!-- Modal edit-name-->
+    <div class="editmodal" id="editmodal">
+        <div class="modal-content">
+            <div class="top-modal">
+                <span class="close-btn" onclick="closeModal(2)">&times;</span>
+                <i class="fa-solid fa-pen-to-square"></i>
+                <h2>Edit Plant</h2>
+            </div>
+            <form id="enameForm">
+                <label>Plant Name:</label>
+                <input type="text" id="epname" placeholder="Enter your plant name">
+                <button id="submit" type="submit" class="submit-btn">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal season-->
+    <div class="season" id="season">
+        <div class="modal-content">
+            <div class="top-modal">
+                <span class="close-btn" onclick="closeModal(3)">&times;</span>
+                <i class="fa-solid fa-circle-plus"></i>
+                <h2>Add Season</h2>
+            </div>
+            <form id="seasonForm">
+                <label>Season:</label>
+                <input type="text" id="pseason" placeholder="Enter your season">
+                <button id="submit" type="submit" class="submit-btn">Submit</button>
+            </form>
+        </div>
+    </div>
+    <!-- Modal edit-season-->
+    <div class="editseason" id="editseason">
+        <div class="modal-content">
+            <div class="top-modal">
+                <span class="close-btn" onclick="closeModal(4)">&times;</span>
+                <i class="fa-solid fa-pen-to-square"></i>
+                <h2>Edit Season</h2>
+            </div>
+            <form id="eseasonForm">
+                <label>Season:</label>
+                <input type="text" id="epseason" placeholder="Enter your season">
+                <button id="submit" type="submit" class="submit-btn">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal area-->
+    <div class="area" id="area">
+        <div class="modal-content">
+            <div class="top-modal">
+                <span class="close-btn" onclick="closeModal(5)">&times;</span>
+                <i class="fa-solid fa-circle-plus"></i>
+                <h2>Add Area</h2>
+            </div>
+            <form id="areaForm">
+                <label>Area:</label>
+                <input type="text" id="parea" placeholder="Enter your area">
+                <button id="submit" type="submit" class="submit-btn">Submit</button>
+            </form>
+        </div>
+    </div>
+    <!-- Modal edit-area-->
+    <div class="editarea" id="editarea">
+        <div class="modal-content">
+            <div class="top-modal">
+                <span class="close-btn" onclick="closeModal(6)">&times;</span>
+                <i class="fa-solid fa-pen-to-square"></i>
+                <h2>Edit Area</h2>
+            </div>
+            <form id="eareaForm">
+                <label>Area:</label>
+                <input type="text" id="eparea" placeholder="Enter your area">
+                <button id="submit" type="submit" class="submit-btn">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal growth-->
+    <div class="growth" id="growth">
+        <div class="modal-content">
+            <div class="top-modal">
+                <span class="close-btn" onclick="closeModal(7)">&times;</span>
+                <i class="fa-solid fa-circle-plus"></i>
+                <h2>Add Growth</h2>
+            </div>
+            <form id="growthForm">
+                <label>Growth:</label>
+                <input type="text" id="pgrowth" placeholder="Enter your growth">
+                <button id="submit" type="submit" class="submit-btn">Submit</button>
+            </form>
+        </div>
+    </div>
+    <!-- Modal edit-growth-->
+    <div class="editgrowth" id="editgrowth">
+        <div class="modal-content">
+            <div class="top-modal">
+                <span class="close-btn" onclick="closeModal(8)">&times;</span>
+                <i class="fa-solid fa-pen-to-square"></i>
+                <h2>Edit Growth</h2>
+            </div>
+            <form id="egrowthForm">
+                <label>Growth:</label>
+                <input type="text" id="epgrowth" placeholder="Enter your growth">
+                <button id="submit" type="submit" class="submit-btn">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal Add All-->
+    <div class="addall" id="addall">
+        <div class="modal-content">
+            <div class="top-modal">
+                <span class="close-btn" onclick="closeModal(9)">&times;</span>
+                <i class="fa-solid fa-globe"></i>
+                <h2>Add All</h2>
+            </div>
+            <form id="plantFormall">
+                <select id="plantName1">
+                    <option>Loading...</option>
+                </select>
+                <select id="plantSeason1">
+                    <option>Loading...</option>
+                </select>
+                <select id="plantArea1">
+                    <option>Loading...</option>
+                </select>
+                <select id="growthStage1">
+                    <option>Loading...</option>
+                </select>
+                <input type="number" id="cropDensity1" placeholder="Enter your crop density" step="any">
+                <input type="number" id="pestFertilizer1" placeholder="Enter your fertilizer usage" step="any">
+                <input type="number" id="pestPressure1" placeholder="Enter your pest pressure" step="any">
+                <button id="submit" type="submit" class="submit-btn">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal Edit-->
+    <div class="edit" id="edit">
+        <div class="modal-content">
+            <div class="top-modal">
+                <span class="close-btn" onclick="closeModal(10)">&times;</span>
+                <i class="fa-solid fa-pen-to-square"></i>
+                <h2>Edit</h2>
+            </div>
+            <form id="editplantForm">
+                <select id="plantName2">
+                    <option>Loading...</option>
+                </select>
+                <select id="plantseason2">
+                    <option>Loading...</option>
+                </select>
+                <select id="plantarea2">
+                    <option>Loading...</option>
+                </select>
+                <select id="growthstage2">
+                    <option>Loading...</option>
+                </select>
+                <input type="number" id="cropdensity2" placeholder="Enter your crop density" step="any">
+                <input type="number" id="pestFertilizer2" placeholder="Enter your fertilizer usage" step="any">
+                <input type="number" id="pestpressure2" placeholder="Enter your pest pressure" step="any">
+                <button id="submit" type="submit" class="submit-btn">Submit</button>
+            </form>
+        </div>
+    </div>
+            
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init();</script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+    <script src="plant-management.js"></script>
+</body>
+</html>

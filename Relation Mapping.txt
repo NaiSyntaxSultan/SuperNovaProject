@@ -1,0 +1,29 @@
+Users (User_ID (PK), Username, Password, Email, Role_ID (FK))
+
+Role (Role_ID (PK), Role_name)
+
+Sensors (Sensors_ID (PK), Timestamp, Weather_ID (FK), Soils_ID (FK))
+
+Weathers (Weathers_ID (PK), Temperature, Humidity, Rainfall, Sunlight_exposure, Wind_speed, CO2_concentration, Frost_risk)
+
+Soils (Soils_ID (PK), Nitrogen, Phosphorus, Potassium, PH, Soil_moisture, Soil_type_ID (FK), Organic_matter)
+
+Soil_type (Soil_type_ID (PK), Type)
+
+Planting_Record (Planting_ID (PK), Plant_ID (FK), Plant_season_ID (FK), Plantation_area_ID (FK), Crop_density, Growth_stage_ID (FK), Fertilizer_usage, Pest_pressure)
+
+Plant (Plant_ID (PK), Plant_Name)
+
+Plant_season (Plant_season_ID (PK), Season)
+
+Plantation_area (Plantation_area_ID (PK), Area)
+
+Growth_stage (Growth_stage_ID (PK), Growth)
+
+Farms (Farms_ID (PK), Plantation_area_ID (FK), Soil_type_ID (FK), Irrigation_frequency, Water_source_type_ID (FK))
+
+Water_source_type (Water_source_type_ID (PK), Type)
+
+Farm_sensors (Farm_ID (PK,FK), Sensor_ID(PK,FK))
+
+Farm_plants (Farm_ID (PK,FK), Plant_ID(PK,FK))
